@@ -1,0 +1,111 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-ld-4">
+    <div><h4>Edit Job Application Record:</h4></div>
+    <br>
+    <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Job Title</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="jobTitle"
+              placeholder="Sr Software Engineer"
+              required="true"
+            />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Company</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="company"
+              placeholder="Microsoft"
+              required
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Location</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="location"
+              placeholder="Seattle, WA"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Apply Link</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="applyLink"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Date Applied</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="dateApplied"
+              placeholder="yyyy-MM-dd"
+              required
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Job Status</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="jobStatus"
+              placeholder="Pending"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="row form-group">
+        <div class="col text-center">
+          <button class="btn btn-primary" type="submit">
+            Update Record
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

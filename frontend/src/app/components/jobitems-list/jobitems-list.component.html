@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row border-bottom align-items-center">
+    <div class="col">
+      <h5 class="h5">Job Application Records (total: {{ totalCount }})</h5>
+    </div>
+
+    <div class="col-sm6 d-flex ">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control align-middle"
+          placeholder="Enter a term to filter"
+          [(ngModel)]="searchTerm"
+        />
+        &nbsp;
+        <select id="filter" name="filter" [(ngModel)]="searchBy">
+          <option value="jobTitle" selected="selected">Job Title</option>
+          <option value="company">Company</option>
+          <option value="location">Location</option>
+        </select>
+        &nbsp;
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="filterByTerm()"
+          >
+            Filter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col" class="col-lg-3">Job Title</th>
+          <th scope="col" class="col-lg-2">Company</th>
+          <th scope="col" class="col-lg-2">Location</th>
+          <th scope="col" class="col-lg-1">Link</th>
+          <th scope="col" class="col-lg-1">Applied</th>
+          <th scope="col" class="col-lg-1">Status</th>
+          <th scope="col" class="col-lg-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="text-center"
+          *ngFor="
+            let item of JobItems | paginate: {
+                itemsPerPage: pageSize,
+                currentPage: currPage,
+                totalItems: totalCount
+            };
+            let i = index;
+        ">
+          <td title="item.id={{item.id}}">{{ pageSize*(currPage-1) + (i+1) }}</td>
+          <td>{{ item.jobTitle }}</td>
+          <td>{{ item.company }}</td>
+          <td>{{ item.location }}</td>
+          <td><a href="{{ item.applyLink }}" target="_blank">click here</a></td>
+          <td>{{ item.dateApplied }}</td>
+          <td>{{ item.jobStatus }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              routerLink="/edit-jobitem/{{ item.id }}"
+            >
+              Edit
+            </button>
+            &nbsp;
+            <button class="btn btn-sm btn-danger" (click)="delete(item.id, i)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row border-bottom">
+    <div class="col-md-6 text-left">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="handlePageChange($any($event))"
+      ></pagination-controls>
+    </div>
+
+    <div class="col-md-3 text-right">
+      Items per Page:
+      <select (change)="handlePageSizeChange($event)">
+        <option *ngFor="let size of pageSizes" [ngValue]="size">
+          {{ size }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <br>
+</div>

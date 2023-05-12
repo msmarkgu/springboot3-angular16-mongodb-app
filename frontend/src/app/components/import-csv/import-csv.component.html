@@ -1,0 +1,11 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-ld-4">
+    <h4>Import Job Records From CSV</h4>
+    <hr>
+    <div class="form-group">
+      <label for="fileUpload">Select file to upload:</label>&nbsp;
+      <input type="file" id="fileUpload" (change)="onFileSelected($event)">
+    </div>
+    <button class="btn btn-primary" (click)="onUpload()">Import</button>
+  </div>
+</div>
