@@ -39,5 +39,6 @@ Step 10:  ```ng serve```
 
 ### From the browser call the endpoint http://localhost:4200/. You should get something like this:
 
-<img src="https://github.com/msmarkgu/springboot3-angular16-mongodb-app/assets/26933333/a77b9183-de96-4def-a2dc-3fb3b7c448f2" width="800" height="450" />
-
+<kbd>
+<img src="https://github.com/msmarkgu/springboot3-angular16-mongodb-app/assets/26933333/628c62b8-f374-4d46-a06b-fbad4993b480" width="800" height="450" style="border: 1px solid blue;"/>
+</kbd>
