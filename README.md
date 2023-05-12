@@ -1,7 +1,7 @@
 # A simple full-stack web app using Spring Boot 3 + Angular 16  + MongoDB
 # What it does?
 
-It helps to keep your job application history in MongoDB. Each history item has job title, company, location, job description, post date and the apply link.
+It helps to keep your job application history in MongoDB. Each history item has job title, company, location, apply link, apply date and status. It can show the list using pagination, and filter the list by entered keyword. Besides, it supports batch import and export in CSV.
 
 # Local Setup and Run the application
 
@@ -37,4 +37,7 @@ Step 9: ```npm install```
 
 Step 10:  ```ng serve```
 
-### From the browser call the endpoint http://localhost:4200/.
+### From the browser call the endpoint http://localhost:4200/. You should get something like this:
+
+<img src="https://github.com/msmarkgu/springboot3-angular16-mongodb-app/assets/26933333/a77b9183-de96-4def-a2dc-3fb3b7c448f2" width="800" height="450" />
+
